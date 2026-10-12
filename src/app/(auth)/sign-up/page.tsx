@@ -39,8 +39,9 @@ export default function SignUpPage() {
         const { error } = await authClient.signIn.social({
             provider: "google",
             callbackURL: "/",
+            errorCallbackURL: "/sign-up",
         });
-
+        console.log("Cgheck rror", error);
         if (error) {
             toast.error(error.message);
         }
@@ -200,17 +201,15 @@ export default function SignUpPage() {
                 </Button>
 
                 {/* Sign In Link */}
-                <div className="my-6 border-t border-gray-100" />
-
-                <p className="text-center text-sm text-gray-500">
+                <div className="mt-6 text-center text-sm text-gray-500">
                     অ্যাকাউন্ট আছে?{" "}
                     <Link
                         href="/sign-in"
-                        className="font-semibold text-[#047F39] transition hover:text-[#036B30] hover:underline"
+                        className="font-semibold text-[#047F39] transition-colors hover:text-[#035c2a] hover:underline"
                     >
                         সাইন ইন করুন
                     </Link>
-                </p>
+                </div>
             </section>
 
             {/* Back to Home */}

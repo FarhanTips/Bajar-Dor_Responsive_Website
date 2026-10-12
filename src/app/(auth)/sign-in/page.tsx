@@ -44,7 +44,7 @@ export default function SignUpPage() {
         const { error } = await authClient.signIn.social({
             provider: "google",
             callbackURL: "/",
-            // errorCallbackURL: "/sign-in",
+            errorCallbackURL: "/sign-in",
         });
 
         if (error) {
