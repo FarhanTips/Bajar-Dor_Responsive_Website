@@ -26,7 +26,7 @@ const Marquee = async () => {
     return (
         <div className='bg-white mt-8 sticky top-0 z-50'>
 
-            <div className='border border-gray-200 py-2 text-sm'>
+            <div className='border border-gray-200 py-2 sm:text-sm text-[10px]'>
                 
 
                 <MarqueeText direction="right" duration={15}>

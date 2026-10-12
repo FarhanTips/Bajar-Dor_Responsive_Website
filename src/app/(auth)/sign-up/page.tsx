@@ -48,21 +48,24 @@ export default function SignUpPage() {
     };
 
     return (
-        <main className="flex min-h-[calc(100vh-80px)] flex-col items-center justify-center bg-[#F0F5F0] px-4 py-12">
+        <main className="flex min-h-[calc(100vh-80px)] flex-col items-center justify-center bg-[#F0F5F0] px-3 py-6 sm:px-5 sm:py-8 lg:px-4 lg:py-12">
             {/* Page Header */}
-            <header className="mb-8 w-full max-w-md text-center">
-                <h1 className="mb-2 text-2xl font-bold tracking-tight">
+            <header className="mb-5 w-full max-w-md text-center sm:mb-7 lg:mb-8">
+                <h1 className="mb-2 text-xl font-bold tracking-tight sm:text-2xl">
                     অ্যাকাউন্ট তৈরি করুন
                 </h1>
 
-                <p className="text-sm leading-6 text-gray-500">
+                <p className="mx-auto max-w-sm text-xs leading-5 text-gray-500 sm:text-sm sm:leading-6">
                     বিনা খরচে সাইন আপ করে সব বিস্তারিত দাম দেখুন।
                 </p>
             </header>
 
             {/* Sign Up Card */}
-            <section className="w-full max-w-md rounded-2xl border border-gray-100 bg-white p-6 shadow-xl shadow-gray-200/50 sm:p-8">
-                <Form className="flex w-full flex-col gap-5" onSubmit={onSubmit}>
+            <section className="w-full max-w-md rounded-xl border border-gray-100 bg-white p-4 shadow-xl shadow-gray-200/50 sm:rounded-2xl sm:p-6 lg:p-8">
+                <Form
+                    className="flex w-full flex-col gap-4 sm:gap-5"
+                    onSubmit={onSubmit}
+                >
                     {/* Name */}
                     <TextField
                         isRequired
@@ -79,7 +82,7 @@ export default function SignUpPage() {
                         </Label>
 
                         <Input
-                            className="w-full rounded-lg border border-gray-300 bg-white px-3 py-2.5 text-sm outline-none transition focus:border-[#047F39] focus:ring-2 focus:ring-[#047F39]/15"
+                            className="w-full rounded-lg border border-gray-300 bg-white px-3 py-2.5 text-sm outline-none transition focus:border-[#047F39] focus:ring-2 focus:ring-[#047F39]/15 sm:px-4"
                             placeholder="আপনার নাম লিখুন"
                             autoComplete="name"
                         />
@@ -93,7 +96,9 @@ export default function SignUpPage() {
                         name="email"
                         type="email"
                         validate={(value) => {
-                            if (!/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i.test(value)) {
+                            if (
+                                !/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i.test(value)
+                            ) {
                                 return "অনুগ্রহ করে সঠিক ইমেইল ঠিকানা লিখুন";
                             }
                             return null;
@@ -104,7 +109,7 @@ export default function SignUpPage() {
                         </Label>
 
                         <Input
-                            className="w-full rounded-lg border border-gray-300 bg-white px-3 py-2.5 text-sm outline-none transition focus:border-[#047F39] focus:ring-2 focus:ring-[#047F39]/15"
+                            className="w-full rounded-lg border border-gray-300 bg-white px-3 py-2.5 text-sm outline-none transition focus:border-[#047F39] focus:ring-2 focus:ring-[#047F39]/15 sm:px-4"
                             placeholder="you@example.com"
                             autoComplete="email"
                         />
@@ -139,7 +144,7 @@ export default function SignUpPage() {
                         </Label>
 
                         <Input
-                            className="w-full rounded-lg border border-gray-300 bg-white px-3 py-2.5 text-sm outline-none transition focus:border-[#047F39] focus:ring-2 focus:ring-[#047F39]/15"
+                            className="w-full rounded-lg border border-gray-300 bg-white px-3 py-2.5 text-sm outline-none transition focus:border-[#047F39] focus:ring-2 focus:ring-[#047F39]/15 sm:px-4"
                             placeholder="একটি শক্তিশালী পাসওয়ার্ড দিন"
                         />
 
@@ -153,14 +158,14 @@ export default function SignUpPage() {
                     {/* Email Sign Up */}
                     <Button
                         type="submit"
-                        className="text-sm w-full rounded-lg bg-[#047F39] py-3 font-semibold text-white shadow-md shadow-red-700/20 transition-colors"
+                        className="w-full rounded-lg bg-[#047F39] py-3 text-sm font-semibold text-white shadow-md shadow-red-700/20 transition-colors"
                     >
                         অ্যাকাউন্ট তৈরি করুন
                     </Button>
                 </Form>
 
                 {/* Divider */}
-                <div className="my-6 flex items-center gap-4">
+                <div className="my-5 flex items-center gap-3 sm:my-6 sm:gap-4">
                     <div className="h-px flex-1 bg-gray-200" />
                     <span className="text-xs text-gray-400">অথবা</span>
                     <div className="h-px flex-1 bg-gray-200" />
@@ -170,13 +175,14 @@ export default function SignUpPage() {
                 <Button
                     type="button"
                     onPress={handleGoogleSignUp}
-                    className="flex w-full items-center justify-center gap-3 rounded-lg border border-gray-300 bg-white py-3 text-sm font-semibold text-gray-700 transition hover:bg-gray-50 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#047F39] focus-visible:ring-offset-2"
+                    className="flex w-full items-center justify-center gap-2 rounded-lg border border-gray-300 bg-white px-3 py-3 text-xs font-semibold text-gray-700 transition hover:bg-gray-50 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#047F39] focus-visible:ring-offset-2 sm:gap-3 sm:px-4 sm:text-sm"
                 >
                     <svg
                         xmlns="http://www.w3.org/2000/svg"
                         width="20"
                         height="20"
                         viewBox="0 0 48 48"
+                        className="shrink-0"
                         aria-hidden="true"
                     >
                         <path
@@ -201,7 +207,7 @@ export default function SignUpPage() {
                 </Button>
 
                 {/* Sign In Link */}
-                <div className="mt-6 text-center text-sm text-gray-500">
+                <div className="mt-5 text-center text-xs text-gray-500 sm:mt-6 sm:text-sm">
                     অ্যাকাউন্ট আছে?{" "}
                     <Link
                         href="/sign-in"
@@ -213,7 +219,10 @@ export default function SignUpPage() {
             </section>
 
             {/* Back to Home */}
-            <Link href="/" className="mt-6 text-center text-xs text-gray-400">
+            <Link
+                href="/"
+                className="mt-5 text-center text-xs text-gray-400 sm:mt-6"
+            >
                 ⬅︎ হোম পেজে ফিরে যান
             </Link>
         </main>

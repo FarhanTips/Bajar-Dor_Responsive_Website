@@ -53,26 +53,22 @@ export default function SignUpPage() {
     };
 
     return (
-        <div className="flex min-h-[calc(100vh-80px)] flex-col items-center justify-center bg-[#F0F5F0] px-4 py-10">
+        <div className="flex min-h-[calc(100vh-80px)] flex-col items-center justify-center bg-[#F0F5F0] px-3 py-6 sm:px-5 sm:py-8 lg:px-6 lg:py-10">
             {/* Heading */}
-            <div className="mb-8 text-center">
-
-
-                <h1 className="mb-2 text-2xl font-bold tracking-tight text-gray-900">
+            <div className="mb-5 w-full max-w-md text-center sm:mb-7 lg:mb-8">
+                <h1 className="mb-2 text-xl font-bold tracking-tight text-gray-900 sm:text-2xl">
                     সাইন ইন
                 </h1>
 
-                <p className="text-sm leading-6 text-gray-500">
+                <p className="mx-auto max-w-sm text-xs leading-5 text-gray-500 sm:text-sm sm:leading-6">
                     বিস্তারিত দাম, বাজার তুলনা ও প্রোফাইল দেখতে অ্যাকাউন্টে ঢুকুন।
                 </p>
             </div>
-            <div className="w-full max-w-md rounded-2xl border border-gray-100 bg-white p-6 shadow-xl shadow-gray-200/50 sm:p-8">
 
-
-
+            <div className="w-full max-w-md rounded-xl border border-gray-100 bg-white p-4 shadow-lg shadow-gray-200/50 sm:rounded-2xl sm:p-6 md:p-7 lg:p-8">
                 {/* Sign In Form */}
                 <Form
-                    className="flex w-full flex-col gap-5"
+                    className="flex w-full flex-col gap-4 sm:gap-5"
                     onSubmit={onSubmit}
                 >
                     <TextField
@@ -94,7 +90,7 @@ export default function SignUpPage() {
                         </Label>
 
                         <Input
-                            className="w-full rounded-xl border border-gray-200 bg-gray-50 px-4 py-3 text-sm outline-none transition-all placeholder:text-gray-400 focus:border-[#047F39] focus:bg-white focus:ring-4 focus:ring-[#047F39]/10"
+                            className="w-full rounded-xl border border-gray-200 bg-gray-50 px-3 py-3 text-sm outline-none transition-all placeholder:text-gray-400 focus:border-[#047F39] focus:bg-white focus:ring-4 focus:ring-[#047F39]/10 sm:px-4"
                             placeholder="আপনার ইমেইল লিখুন"
                         />
 
@@ -118,7 +114,7 @@ export default function SignUpPage() {
                         </Label>
 
                         <Input
-                            className="w-full rounded-xl border border-gray-200 bg-gray-50 px-4 py-3 text-sm outline-none transition-all placeholder:text-gray-400 focus:border-[#047F39] focus:bg-white focus:ring-4 focus:ring-[#047F39]/10"
+                            className="w-full rounded-xl border border-gray-200 bg-gray-50 px-3 py-3 text-sm outline-none transition-all placeholder:text-gray-400 focus:border-[#047F39] focus:bg-white focus:ring-4 focus:ring-[#047F39]/10 sm:px-4"
                             placeholder="আপনার পাসওয়ার্ড লিখুন"
                         />
 
@@ -127,16 +123,14 @@ export default function SignUpPage() {
 
                     <Button
                         type="submit"
-                        className="text-sm w-full rounded-lg bg-[#047F39] py-3 font-semibold text-white shadow-md shadow-red-700/20 transition-colors"
+                        className="w-full rounded-lg bg-[#047F39] py-3 text-sm font-semibold text-white shadow-md shadow-red-700/20 transition-colors"
                     >
                         সাইন ইন করুন
                     </Button>
                 </Form>
 
-
-
                 {/* Divider */}
-                <div className="my-6 flex items-center gap-4">
+                <div className="my-5 flex items-center gap-3 sm:my-6 sm:gap-4">
                     <div className="h-px flex-1 bg-gray-200" />
                     <span className="text-xs font-medium text-gray-400">
                         অথবা
@@ -147,12 +141,12 @@ export default function SignUpPage() {
                 {/* Google Sign In */}
                 <Button
                     onClick={handleGoogleSignIn}
-                    className="flex w-full items-center justify-center gap-3 rounded-xl border border-gray-200 bg-white px-4 py-3 text-sm font-semibold text-gray-700 transition-all duration-200 hover:border-[#047F39]/40 hover:bg-[#047F39]/5 focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-[#047F39]/10"
+                    className="flex w-full items-center justify-center gap-2 rounded-xl border border-gray-200 bg-white px-3 py-3 text-xs font-semibold text-gray-700 transition-all duration-200 hover:border-[#047F39]/40 hover:bg-[#047F39]/5 focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-[#047F39]/10 sm:gap-3 sm:px-4 sm:text-sm"
                 >
                     <svg
                         xmlns="http://www.w3.org/2000/svg"
                         viewBox="0 0 48 48"
-                        className="h-5 w-5"
+                        className="h-5 w-5 shrink-0"
                         aria-hidden="true"
                     >
                         <path
@@ -177,7 +171,7 @@ export default function SignUpPage() {
                 </Button>
 
                 {/* Sign Up Link */}
-                <div className="mt-6 text-center text-sm text-gray-500">
+                <div className="mt-5 text-center text-xs leading-5 text-gray-500 sm:mt-6 sm:text-sm">
                     অ্যাকাউন্ট নেই?{" "}
                     <Link
                         href="/sign-up"
@@ -187,7 +181,11 @@ export default function SignUpPage() {
                     </Link>
                 </div>
             </div>
-            <Link href="/" className="mt-6 text-center text-xs text-gray-400">
+
+            <Link
+                href="/"
+                className="mt-5 text-center text-xs text-gray-400 sm:mt-6"
+            >
                 ⬅︎ হোম পেজে ফিরে যান
             </Link>
         </div>

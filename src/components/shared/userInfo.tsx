@@ -1,7 +1,7 @@
 "use client";
 
 import { authClient } from "@/lib/auth-client";
-import { Button } from "@heroui/react";
+import { Button, Dropdown, Label } from "@heroui/react";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { toast } from "sonner";
@@ -31,29 +31,61 @@ const UserInfo = () => {
         });
     };
     return (
-        <div >
-            {
-                session?.user ?
-                    <div className='flex items-center justify-end gap-2'>
-                        <p className='font-semibold'>Welcome! <Link href="/profile" className='text-red-700 border border-gray-300 rounded hover:border-red-700 px-2 py-1'>{session.user?.name}</Link></p>
-                        <Button onClick={handleSignOut} className="px-3.5 py-1.5 rounded-sm bg-white text-black border border-gray-300 hover:bg-[#047F39] hover:text-white">সাইন আউট</Button>
-                    </div>
-                    :
-                    <div className='flex items-center justify-end gap-2'>
-                        <Link
-                            href="/sign-in"
-                            className="px-4 py-2 rounded-md border border-gray-300 hover:text-[#047F39] border-none"
-                        >
-                            সাইন ইন
-                        </Link>
-                        <Link
-                            href="/sign-up"
-                            className="px-3.5 py-1.5 rounded-md bg-[#047F39] text-white active:scale-95 hover:bg-[#036b30]"
-                        >
-                            সাইন আপ
-                        </Link>
-                    </div>
-            }
+        <div className="w-full min-w-0">
+            {session?.user ? (
+                <div>
+                    <Dropdown>
+                        <Button className="flex max-w-full items-center gap-2 rounded-md border border-gray-300 bg-white px-3.5 py-2 text-xs font-semibold text-[#047F39] hover:border-[#047F39] sm:px-4 sm:text-base">
+                            <span className="max-w-30 truncate sm:max-w-45 lg:max-w-none">
+                                {session.user?.name}
+                            </span>
+                            <span className="shrink-0 text-xs sm:text-sm">▼</span>
+                        </Button>
+
+                        <Dropdown.Popover>
+                            <Dropdown.Menu
+                                onAction={(key) => {
+                                    if (key === "প্রোফাইল") {
+                                        router.push("/profile");
+                                    }
+
+                                    if (key === "সাইন আউট") {
+                                        handleSignOut();
+                                    }
+                                }}
+                            >
+                                <Dropdown.Item id="প্রোফাইল" textValue="প্রোফাইল">
+                                    <Label className="text-xs sm:text-sm">প্রোফাইল</Label>
+                                </Dropdown.Item>
+
+                                <Dropdown.Item
+                                    id="সাইন আউট"
+                                    textValue="সাইন আউট"
+                                    variant="danger"
+                                >
+                                    <Label className="text-xs sm:text-sm">সাইন আউট</Label>
+                                </Dropdown.Item>
+                            </Dropdown.Menu>
+                        </Dropdown.Popover>
+                    </Dropdown>
+                </div>
+            ) : (
+                <div className="flex items-center justify-end gap-1.5 sm:gap-2">
+                    <Link
+                        href="/sign-in"
+                        className="whitespace-nowrap rounded-md px-3 py-2 text-xs transition hover:text-[#047F39] sm:px-4 sm:text-base"
+                    >
+                        সাইন ইন
+                    </Link>
+
+                    <Link
+                        href="/sign-up"
+                        className="whitespace-nowrap rounded-md bg-[#047F39] px-3 py-2 text-xs text-white transition hover:bg-[#036b30] active:scale-95 sm:px-4 sm:text-base"
+                    >
+                        সাইন আপ
+                    </Link>
+                </div>
+            )}
         </div>
     );
 };
