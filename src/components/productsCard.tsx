@@ -35,10 +35,10 @@ const ProductsCard = ({ product }: ProductsCardProps) => {
                                     : "text-gray-500"
                                 }`}
                         >
-                            {product.change.pct > 0
-                                ? `▼ ${product.change.pct.toLocaleString("bn-BD")}%`
-                                : product.change.pct < 0
-                                    ? `▲ ${Math.abs(product.change.pct).toLocaleString("bn-BD")}%`
+                            {product.change.dir === "up"
+                                ? `▲ ${product.change.pct.toLocaleString("bn-BD")}%`
+                                : product.change.dir === "down"
+                                    ? `▼ ${Math.abs(product.change.pct).toLocaleString("bn-BD")}%`
                                     : "— ০.০%"}
                         </p>
                     </div>

@@ -1,27 +1,17 @@
 
+import { ProductType } from '@/app/page';
 import React from 'react';
 import MarqueeText from "react-marquee-text"
 import "react-marquee-text/dist/styles.css"
 
 
-interface HeadLineType {
-    id: number;
-    nameBn: string;
-    unit: string;
-    image: string
-    today: number;
-    change: {
-        dir: string;
-        pct: number;
-    };
-}
 
 const unitKeys = ["kg", "litre", "dozen", "piece"];
 const units = ["কেজি", "লিটার", "ডজন", "টি"];
 
 const Marquee = async () => {
     const res = await fetch("https://openapi.programming-hero.com/api/bazardor/products");
-    const data: HeadLineType[] = await res.json();
+    const data: ProductType[] = await res.json();
 
     return (
         <div className='bg-white mt-8 sticky top-0 z-50'>
@@ -37,15 +27,15 @@ const Marquee = async () => {
                                 {d.today.toLocaleString("bn-BD")} টাকা/
                                 {units[unitKeys.indexOf(d.unit)]}{" "}
 
-                                <span className={d.change.pct > 0
-                                    ? "text-green-700"
-                                    : d.change.pct < 0 ?
-                                        "text-red-700" : "text-gray-500"
+                                <span className={d.change.dir === "up"
+                                    ? "text-red-700"
+                                    : d.change.dir === "down" ?
+                                        "text-green-700" : "text-gray-500"
                                 }>
-                                    {d.change.pct > 0
-                                        ? `▼ ${d.change.pct.toLocaleString("bn-BD")}%`
-                                        : d.change.pct < 0
-                                            ? `▲ ${Math.abs(d.change.pct).toLocaleString("bn-BD")}%`
+                                    {d.change.dir === "up"
+                                        ? `▲ ${d.change.pct.toLocaleString("bn-BD")}%`
+                                        : d.change.dir === "down"
+                                            ? `▼ ${Math.abs(d.change.pct).toLocaleString("bn-BD")}%`
                                             : "— ০%"}
                                 </span>
                             </span>
