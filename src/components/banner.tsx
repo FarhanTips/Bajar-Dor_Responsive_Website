@@ -9,6 +9,12 @@ const Banner = () => {
         sm:grid-cols-2 lg:p-8 sm:gap-2">
             {/* Left content */}
             <div>
+                <span className="inline-block text-[8px] sm:text-[10px] md:text-xs leading-relaxed text-[#05893E] bg-[#05893E]/10 mb-4 border rounded-3xl px-3 py-2 font-semibold">
+                    {new Date().toLocaleDateString("bn-BD", {
+                        dateStyle: "full",
+                        calendar: "gregory",
+                    })}
+                </span>
                 <p className="mb-3 text-lg md:text-2xl lg:text-4xl font-semibold">
                     আজকের বাজারের দাম এক নজরে
                 </p>
@@ -19,7 +25,7 @@ const Banner = () => {
                 </p>
 
                 <Button className="bg-[#047F39] text-[10px] sm:text-xs px-3 py-3 font-semibold rounded-lg sm:px-5 sm:py-5 mt-8"><a href="#সব-পণ্য">সব পণ্য দেখুন →</a></Button>
- 
+
             </div>
 
             {/* Right banner image */}
