@@ -1,5 +1,3 @@
-// import logo from "@/assets/logo-icon.png"
-// import Image from "next/image";
 
 import UserInfo from "./userInfo";
 

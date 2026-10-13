@@ -15,7 +15,7 @@ const UserInfo = () => {
     if (isPending) {
         return (
             <div className="ml-auto">
-                Loading
+                Loading...
             </div>
         );
     }
