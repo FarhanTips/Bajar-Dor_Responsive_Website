@@ -35,11 +35,11 @@ const UserInfo = () => {
             {session?.user ? (
                 <div>
                     <Dropdown>
-                        <Button className="flex max-w-full items-center gap-2 rounded-md border border-gray-300 bg-white px-3.5 py-2 text-xs font-semibold text-[#047F39] hover:border-[#047F39] sm:px-4 sm:text-base">
+                        <Button className="flex max-w-full items-center gap-2 rounded-md border border-gray-300 bg-white px-3.5 py-2 text-xs font-semibold text-black sm:px-4 sm:text-base">
                             <span className="max-w-30 truncate sm:max-w-45 lg:max-w-none">
                                 {session.user?.name}
                             </span>
-                            <span className="shrink-0 text-xs sm:text-sm">▼</span>
+                            <span className="shrink-0 text-[8px] sm:text-[10px]">▼</span>
                         </Button>
 
                         <Dropdown.Popover>
@@ -54,8 +54,16 @@ const UserInfo = () => {
                                     }
                                 }}
                             >
+                                <Dropdown.Item id="ইমেইল" textValue="ইমেইল" className="cursor-default hover:bg-transparent">
+                                    <Label className="text-[10px] sm:text-sm">
+                                        <p>{session.user?.name}</p>
+                                        <p className="text-[8px] sm:text-xs text-gray-400">{session.user?.email}</p>
+                                    </Label>
+                                </Dropdown.Item>
+
+
                                 <Dropdown.Item id="প্রোফাইল" textValue="প্রোফাইল">
-                                    <Label className="text-xs sm:text-sm">প্রোফাইল</Label>
+                                    <Label className="text-[10px] sm:text-sm">আমার প্রোফাইল</Label>
                                 </Dropdown.Item>
 
                                 <Dropdown.Item
@@ -63,7 +71,7 @@ const UserInfo = () => {
                                     textValue="সাইন আউট"
                                     variant="danger"
                                 >
-                                    <Label className="text-xs sm:text-sm">সাইন আউট</Label>
+                                    <Label className="text-[10px] sm:text-sm text-red-700">↩︎ সাইন আউট</Label>
                                 </Dropdown.Item>
                             </Dropdown.Menu>
                         </Dropdown.Popover>
