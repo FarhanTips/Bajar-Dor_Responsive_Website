@@ -5,6 +5,7 @@ import NavLinks from "@/components/shared/navLinks";
 import Marquee from "@/components/shared/marquee";
 import { Anek_Bangla } from "next/font/google";
 import { Toaster } from "sonner";
+import Footer from "@/components/shared/footer";
 
 const anekBangla = Anek_Bangla({
   subsets: ["bengali", "latin"],
@@ -28,6 +29,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
         <NavLinks></NavLinks>
         <Marquee></Marquee>
         {children}
+        <Footer></Footer>
         <Toaster position="top-center" richColors />
       </body>
     </html>
