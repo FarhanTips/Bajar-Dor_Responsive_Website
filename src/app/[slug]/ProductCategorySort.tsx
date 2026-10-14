@@ -54,7 +54,7 @@ const ProductCategorySort = ({ products }: ProductCategorySortProps) => {
                         }}>
                         {/* <Label>সাজানোর পদ্ধতি</Label> */}
 
-                        <Select.Trigger className="rounded-3xl border border-gray-400 text-xs">
+                        <Select.Trigger className="rounded-xl border border-gray-400 text-xs">
                             <Select.Value className="text-xs md:text-sm" />
                             <Select.Indicator />
                         </Select.Trigger>

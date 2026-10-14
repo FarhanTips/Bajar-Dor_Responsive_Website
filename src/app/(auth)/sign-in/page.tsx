@@ -60,7 +60,7 @@ export default function SignUpPage() {
                     সাইন ইন
                 </h1>
 
-                <p className="mx-auto max-w-sm text-xs leading-5 text-gray-500 sm:text-sm sm:leading-6">
+                <p className="mx-auto max-w-xl text-xs leading-5 text-gray-500 sm:text-sm sm:leading-6">
                     বিস্তারিত দাম, বাজার তুলনা ও প্রোফাইল দেখতে অ্যাকাউন্টে ঢুকুন।
                 </p>
             </div>
