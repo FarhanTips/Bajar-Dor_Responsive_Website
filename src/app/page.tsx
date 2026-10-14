@@ -34,7 +34,7 @@ export default async function Home() {
   const productsWithPriceDeccrease = products.filter(p => p.change.dir === "down").sort((a, b) => a.change.pct - b.change.pct);
 
   return (
-    <div className="bg-[#F0F5F0]">
+    <div className="bg-[#F0F5F0] pb-30">
       <Banner></Banner>
 
       <div className="w-10/12 mx-auto">

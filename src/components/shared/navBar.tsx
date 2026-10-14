@@ -1,11 +1,12 @@
 
+import Link from "next/link";
 import UserInfo from "./userInfo";
 
 
 const NavBar = () => {
     return (
         <div className="mx-auto my-3 flex w-11/13 items-center justify-between gap-3 sm:my-4">
-            <div className="flex min-w-0 items-center gap-1.5 sm:gap-2">
+            <Link href="/" className="flex min-w-0 items-center gap-1.5 sm:gap-2">
 
                 <p className="shrink-0 rounded-lg bg-[#047F39] p-1.5 text-sm sm:rounded-xl sm:p-2 sm:text-xl">
                     🛒
@@ -23,7 +24,7 @@ const NavBar = () => {
                         })}
                     </p>
                 </div>
-            </div>
+            </Link>
 
             <div className="shrink-0">
                 <UserInfo />

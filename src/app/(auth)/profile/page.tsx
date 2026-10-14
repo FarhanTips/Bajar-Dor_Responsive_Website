@@ -12,7 +12,7 @@ const ProfilePage = () => {
         const router = useRouter();
     
         const { data: session, isPending } = authClient.useSession();
-        console.log(session);
+        console.log("session",session, isPending);
     
         if (isPending) {
             return (
