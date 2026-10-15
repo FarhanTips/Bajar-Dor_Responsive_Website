@@ -1,36 +1,72 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# 🛒 বাজার দর (BazarDor)
 
-## Getting Started
+### নিত্যপ্রয়োজনীয় পণ্যের বাজারদর এক নজরে
 
-First, run the development server:
+**বাজার দর (BazarDor)** is a responsive web application that helps users explore the prices of essential daily commodities across different markets in Bangladesh. Users can compare market prices, track price changes, browse products by category, and view detailed price summaries. The application also provides secure authentication and a user-friendly experience across mobile, tablet, and desktop devices.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+## ✨ Key Features
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+1. **📊 Daily Market Price Overview** — Browse essential commodities with today's price, unit, and price-change indicators, including the top six products with rising and falling prices.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+2. **🛍️ Product Browsing & Categories** — Explore all products through a responsive card grid, navigate category-specific pages, and sort products by default order or price from low to high and high to low.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+3. **📈 Detailed Product Price Analysis** — View minimum, maximum, and average prices, compare today's price with historical prices, and explore market-wise price ranges across different markets and divisions.
 
-## Learn More
+4. **🔐 Secure User Authentication** — Register and sign in using email and password, with Google and GitHub social login support through Better Auth. Protected product detail pages require authentication.
 
-To learn more about Next.js, take a look at the following resources:
+5. **📱 Responsive & User-Friendly Interface** — Enjoy a mobile-friendly layout, responsive navigation, an animated price ticker, an interactive hero banner, loading skeletons, and helpful empty and 404 states.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## 🚀 Additional Features
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+- **Price Change Indicators:** Color-coded indicators for rising, falling, and unchanged prices.
+- **Bangla Localization:** Bengali product names, market information, price labels, and localized number formatting.
+- **Toast Notifications:** Feedback for authentication actions, validation errors, and other relevant events using React Hot Toast.
+- **Protected Routes:** Redirect unauthenticated users when accessing restricted product details.
+- **Dynamic Product Pages:** Access individual product details through slug-based routes.
+- **Custom Error Handling:** Friendly not-found pages with a button to return to the homepage.
+- **Loading States:** Skeleton loaders while product data is being fetched.
+- **Responsive Market Tables:** Browse market-wise minimum, maximum, and average prices on smaller screens.
+- **Informative Footer:** Displays the application's purpose and a disclaimer about market price variations.
 
-## Deploy on Vercel
+## 🛠️ Technologies Used
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+| Technology | Purpose |
+|---|---|
+| [Next.js](https://nextjs.org/) | React framework, routing, and page rendering |
+| [React](https://react.dev/) | Building reusable UI components |
+| [TypeScript](https://www.typescriptlang.org/) | Type safety and maintainable code |
+| [Better Auth](https://www.better-auth.com/) | Authentication and social login |
+| [HeroUI](https://www.heroui.com/) | UI components and interface development |
+| [React Hot Toast](https://react-hot-toast.com/) | Toast notifications |
+| [Tailwind CSS](https://tailwindcss.com/) | Responsive styling and layout |
+| [Vercel](https://vercel.com/) | Deployment and hosting |
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## 📂 Main Application Routes
+
+| Route | Description |
+|---|---|
+| `/` | Homepage with price highlights and all products |
+| `/category/[slug]` | Category-specific product listing and sorting |
+| `/product/[slug]` | Protected product details and market-wise price comparison |
+| `/signin` | User login and social authentication |
+| `/signup` | User registration and social authentication |
+
+## 📱 Responsive Design
+
+BazarDor is designed to work across:
+
+- **Mobile:** Compact navigation, stacked layouts, and responsive product cards.
+- **Tablet:** Flexible grids and optimized spacing.
+- **Desktop:** Multi-column product grids and detailed market price tables.
+
+## ⚠️ Price Disclaimer
+
+All displayed prices are indicative and may vary depending on the market, location, availability, and current market conditions.
+
+## 👨‍💻 Author
+
+Developed as a web application project focused on making daily commodity prices easier to explore and compare.
+
+---
+
+**বাজার দর — প্রয়োজনীয় পণ্যের দাম এক নজরে।**
