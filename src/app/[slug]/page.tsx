@@ -4,13 +4,13 @@ import { notFound } from "next/navigation";
 import { ProductType } from "../page";
 import ProductCategorySort from "./ProductCategorySort";
 
-interface ProductCategoryPage {
+interface ProductCategoryPageProps {
     params: Promise<{
         slug: string;
     }>;
 }
 
-const ProductCategoryPage = async ({ params }: ProductCategoryPage) => {
+const ProductCategoryPage = async ({ params }: ProductCategoryPageProps) => {
 
     const { slug } = await params;
     // console.log("Category:", slug);
