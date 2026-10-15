@@ -12,7 +12,7 @@
 
 3. **📈 Detailed Product Price Analysis** — View minimum, maximum, and average prices, compare today's price with historical prices, and explore market-wise price ranges across different markets and divisions.
 
-4. **🔐 Secure User Authentication** — Register and sign in using email and password, with Google and GitHub social login support through Better Auth. Protected product detail pages require authentication.
+4. **🔐 Secure User Authentication** — Register and sign in using email and password, with Google login support through Better Auth. Protected product detail pages require authentication.
 
 5. **📱 Responsive & User-Friendly Interface** — Enjoy a mobile-friendly layout, responsive navigation, an animated price ticker, an interactive hero banner, loading skeletons, and helpful empty and 404 states.
 
@@ -22,10 +22,12 @@
 - **Bangla Localization:** Bengali product names, market information, price labels, and localized number formatting.
 - **Toast Notifications:** Feedback for authentication actions, validation errors, and other relevant events using React Hot Toast.
 - **Protected Routes:** Redirect unauthenticated users when accessing restricted product details.
+- **User Profile Management:** View and update user information, and sign out securely.
 - **Dynamic Product Pages:** Access individual product details through slug-based routes.
 - **Custom Error Handling:** Friendly not-found pages with a button to return to the homepage.
 - **Loading States:** Skeleton loaders while product data is being fetched.
 - **Responsive Market Tables:** Browse market-wise minimum, maximum, and average prices on smaller screens.
+- **Authentication-Based Navbar:** Shows Sign In and Sign Up buttons when the user is logged out, and Profile and Sign Out options when the user is logged in.
 - **Informative Footer:** Displays the application's purpose and a disclaimer about market price variations.
 
 ## 🛠️ Technologies Used
@@ -46,10 +48,11 @@
 | Route | Description |
 |---|---|
 | `/` | Homepage with price highlights and all products |
-| `/category/[slug]` | Category-specific product listing and sorting |
+| `/[slug]` | Category-specific product listing and sorting |
 | `/product/[slug]` | Protected product details and market-wise price comparison |
 | `/signin` | User login and social authentication |
 | `/signup` | User registration and social authentication |
+| `/profile` | User profile and account information |
 
 ## 📱 Responsive Design
 
