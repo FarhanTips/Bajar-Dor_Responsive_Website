@@ -4,7 +4,7 @@ import { authClient } from "@/lib/auth-client";
 import { Button, Dropdown, Label } from "@heroui/react";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
-import { toast } from "sonner";
+import toast from "react-hot-toast";
 
 const UserInfo = () => {
     const router = useRouter();

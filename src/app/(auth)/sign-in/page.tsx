@@ -4,9 +4,9 @@
 import type { SyntheticEvent } from "react";
 import { Button, FieldError, Form, Input, Label, TextField } from "@heroui/react";
 import Link from "next/link";
-import { toast } from "sonner";
 import { useRouter } from "next/navigation";
 import { authClient } from "@/lib/auth-client";
+import toast from "react-hot-toast";
 
 
 
@@ -33,7 +33,7 @@ export default function SignUpPage() {
 
         console.log("After form submission", data, error);
         if (error) {
-            toast.error(error.message);
+            toast.error(error.message ?? "Something went wrong!");
             return;
         }
         toast.success("সাইন ইন সফল হয়েছে!");
@@ -48,7 +48,7 @@ export default function SignUpPage() {
         });
 
         if (error) {
-            toast.error(error.message);
+            toast.error(error.message ?? "Something went wrong!");
         }
     };
 

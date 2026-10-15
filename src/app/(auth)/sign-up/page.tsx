@@ -5,7 +5,7 @@ import { Button, Description, FieldError, Form, Input, Label, TextField } from "
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { authClient } from "@/lib/auth-client";
-import { toast } from "sonner";
+import toast from "react-hot-toast";
 
 export default function SignUpPage() {
     const router = useRouter();
@@ -27,7 +27,7 @@ export default function SignUpPage() {
         });
 
         if (error) {
-            toast.error(error.message);
+            toast.error(error.message ?? "Something went wrong!");
             return;
         }
 
@@ -43,7 +43,7 @@ export default function SignUpPage() {
         });
         console.log("Cgheck rror", error);
         if (error) {
-            toast.error(error.message);
+            toast.error(error.message ?? "Something went wrong!");
         }
     };
 

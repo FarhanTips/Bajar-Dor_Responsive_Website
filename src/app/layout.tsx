@@ -4,8 +4,8 @@ import Navbar from "@/components/shared/navBar";
 import NavLinks from "@/components/shared/navLinks";
 import Marquee from "@/components/shared/marquee";
 import { Anek_Bangla } from "next/font/google";
-import { Toaster } from "sonner";
 import Footer from "@/components/shared/footer";
+import { Toaster } from "react-hot-toast";
 
 const anekBangla = Anek_Bangla({
   subsets: ["bengali", "latin"],
@@ -30,7 +30,9 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
         <Marquee></Marquee>
         {children}
         <Footer></Footer>
-        <Toaster position="top-center" richColors />
+        <Toaster position="top-center" reverseOrder={false}/>
+
+
       </body>
     </html>
   );

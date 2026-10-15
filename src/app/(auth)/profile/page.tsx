@@ -3,35 +3,35 @@
 import { authClient } from "@/lib/auth-client";
 import { Button, FieldError, Form, Input, Label, TextField } from "@heroui/react";
 import { SyntheticEvent } from "react";
-import { toast } from "sonner";
 import { useRouter } from "next/navigation";
+import toast from "react-hot-toast";
 
 
 const ProfilePage = () => {
 
-        const router = useRouter();
-    
-        const { data: session, isPending } = authClient.useSession();
-        console.log("session",session, isPending);
-    
-        if (isPending) {
-            return (
-                <div className="min-h-screen flex justify-center items-center">
-                    Loading...
-                </div>
-            );
-        }
-    
-        const handleSignOut = async () => {
-            await authClient.signOut({
-                fetchOptions: {
-                    onSuccess: () => {
-                        toast.success("সাইন আউট সফল হয়েছে!");
-                        router.push("/sign-in"); // redirect to login page. // Client-side event handler থেকে navigate করছি, তাই router.push ব্যবহার করেছি।
-                    },
+    const router = useRouter();
+
+    const { data: session, isPending } = authClient.useSession();
+    console.log("session", session, isPending);
+
+    if (isPending) {
+        return (
+            <div className="min-h-screen flex justify-center items-center">
+                Loading...
+            </div>
+        );
+    }
+
+    const handleSignOut = async () => {
+        await authClient.signOut({
+            fetchOptions: {
+                onSuccess: () => {
+                    toast.success("সাইন আউট সফল হয়েছে!");
+                    router.push("/sign-in"); // redirect to login page. // Client-side event handler থেকে navigate করছি, তাই router.push ব্যবহার করেছি।
                 },
-            });
-        };
+            },
+        });
+    };
 
     const handleUpdateButton = async (e: SyntheticEvent<HTMLFormElement>) => {
         e.preventDefault();
@@ -49,7 +49,7 @@ const ProfilePage = () => {
         })
         console.log("After submission", data, error);
         if (error) {
-            toast.error(error.message);
+            toast.error(error.message ?? "Something went wrong!");
             return;
         }
         toast.success("নাম সফলভাবে পরিবর্তন হয়েছে!");
