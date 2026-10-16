@@ -26,7 +26,6 @@
 - **Dynamic Product Pages:** Access individual product details through slug-based routes.
 - **Custom Error Handling:** Friendly not-found pages with a button to return to the homepage.
 - **Loading States:** Skeleton loaders while product data is being fetched.
-- **Responsive Market Tables:** Browse market-wise minimum, maximum, and average prices on smaller screens.
 - **Authentication-Based Navbar:** Shows Sign In and Sign Up buttons when the user is logged out, and Profile and Sign Out options when the user is logged in.
 - **Informative Footer:** Displays the application's purpose and a disclaimer about market price variations.
 

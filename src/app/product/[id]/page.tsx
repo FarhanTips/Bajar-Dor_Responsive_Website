@@ -1,4 +1,5 @@
 import { ProductType } from "@/app/page";
+import { notFound } from "next/navigation";
 
 interface ProductDetailsPageProps {
     params: Promise<{
@@ -15,6 +16,11 @@ const ProductDetailsPage = async ({ params }: ProductDetailsPageProps) => {
     const res = await fetch(`https://openapi.programming-hero.com/api/bazardor/products/${id}`);
     const product: ProductType = await res.json();
     console.log(product);
+    if (!product.id) {
+        notFound();
+    }
+
+
     return (
         <div className="bg-[#F0F5F0] pt-10 pb-30">
             <div className="w-10/12 mx-auto">
